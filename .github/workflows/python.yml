@@ -17,6 +17,9 @@ on:
       - .github/workflows/build_windows_wheel/**
       - .github/workflows/run_tests/**
 
+permissions:
+  contents: read
+
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
   cancel-in-progress: true
